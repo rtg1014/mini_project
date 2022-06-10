@@ -1,0 +1,1 @@
+npx sequelize model:generate --name Board --attributes userId:number,title:string,content:string,image:string
