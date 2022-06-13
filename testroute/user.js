@@ -8,7 +8,7 @@
 
 // require('dotenv').config();
 
-// // 회원가입 joi
+// 회원가입 joi
 // const UsersSchema = Joi.object({
 //     nickname: Joi.string()
 //         .min(3)
@@ -59,7 +59,7 @@
 //     res.status(200).json({ Message: '회원가입 성공' });
 // });
 
-// // 로그인 joi
+// 로그인 joi
 // const AuthScheam = Joi.object({
 //     email: Joi.string()
 //         .empty()
@@ -69,7 +69,7 @@
 //     password: Joi.string().empty().required().messages({ 'any.required': '입력해라' }),
 // });
 
-// // 로그인
+// 로그인
 // router.post('/api/login', async (req, res, next) => {
 //     try {
 //         const { email, password } = await AuthScheam.validateAsync(req.body);
@@ -94,7 +94,7 @@
 //     }
 // });
 
-// // 이메일 중복검사
+// 이메일 중복검사
 // router.get('/api/duplicates/email', async (req, res) => {
 //     const { email } = req.body;
 //     const existUser = await db.User.findOne({ where: { email } });
@@ -108,7 +108,7 @@
 //         res.status(200).send({ email: email });
 //     }
 // });
-// // 닉네임 중복검사
+// 닉네임 중복검사
 // router.get('/api/duplicates/nickname', async (req, res) => {
 //     const { nickname } = req.body;
 //     const existUser = await db.User.findOne({ where: { nickname } });

@@ -1,6 +1,6 @@
 ###
 // 회원가입
-POST http://127.0.0.1:4000/api/signup
+POST http://15.164.210.163:4000/api/signup
 Content-Type: application/json
 
 {
@@ -12,11 +12,11 @@ Content-Type: application/json
 
 ###
 // 로그인
-POST http://127.0.0.1:4000/api/login
+POST http://15.164.210.163:4000/api/login
 Content-Type: application/json
 
 {
-    "email":"test12345@gooogle.com",
+    "email":"test123@gooogle.com",
     "password":"qwer12345"
 }
 
@@ -36,3 +36,10 @@ Content-Type: application/json
 {
   "nickname":"테스트"
 }
+
+
+
+# import axios from "axios"; 
+# const TOKEN = localStorage.getItem("token"); 
+# const api = axios.create({ // 기본 서버주소 baseURL: "http://pooreum.shop", });
+

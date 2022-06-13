@@ -58,6 +58,7 @@ const AuthScheam = Joi.object({
         .required()
         .messages({ 'any.required': '패스워드를 입력해주세요.' }),
 });
+
 // 로그인
 exports.login = async (req, res, next) => {
     // #swagger.tags = ['Users']
