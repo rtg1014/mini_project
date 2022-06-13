@@ -1,6 +1,7 @@
+npx sequelize db:create
 
 npx sequelize model:generate --name Board --attributes userId:INTEGER,title:string,content:string,image:string
 
 npx sequelize model:generate --name User --attributes email:string,nickname:string,password:string
 
-
+npx sequelize db:migrate
