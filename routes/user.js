@@ -13,7 +13,6 @@ router.get('/api/duplicates/email', userController.duplicatesEmail);
 router.get('/api/duplicates/nickname', userController.duplicatesNickname);
 
 // 카카오 로그인
-
 router.get('/kakao', passport.authenticate('kakao'));
 
 router.get(
