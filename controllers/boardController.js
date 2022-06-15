@@ -11,9 +11,7 @@ exports.createPost = async (req, res) => {
         const {title, content,image } = req.body;
         const { userId } = res.locals.user;
         const userCheck = await Board.createPost(title, content,image,userId)
-        const currentId = userCheck.null;
-        userCheck.boardId = currentId
-        console.log(userCheck.title)
+        userCheck.boardId = userCheck['null']
         if(userCheck){
             res.status(200).send({
                 userCheck
