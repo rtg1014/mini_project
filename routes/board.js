@@ -37,7 +37,7 @@ router.post('/api/travels', postController.createPost);
 // ========================================================================================
 
 // // 게시물 조회
-router.get('/api/travels', postController.getPost);
+router.get('/api/travel', postController.getPost);
 
 //=============================================================================================
 

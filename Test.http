@@ -33,8 +33,13 @@ Content-Type: application/json
 
 ###
 // 포스팅
-DELETE  http://15.164.50.132/api/travels/10
+POST  http://15.164.50.132/api/travels
 Content-Type: application/json
+{
+  "title" : "파이리",
+  "content" : "화염 방사",
+  "img" : "https://images.gameinfo.io/pokemon/256/p4f96.webp"
+}
 
 
 ###
