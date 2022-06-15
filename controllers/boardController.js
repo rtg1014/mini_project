@@ -6,17 +6,14 @@ const multer = require('multer');
 
 exports.createPost = async (req,res,)=>{ //next
 
-
     try{
         const {title, content, } = req.body;
-       
-        await Board.createPost(title, content)
+        const userCheck = await Board.createPost(title, content,image)
         if(userCheck){
             res.status(200).send({
                 userCheck
             })
         }
-       
     }catch(err) {
         res.status(400).send({
             errorMessage: '게시물 생성 조건이 올바르지 않습니다.'

@@ -45,7 +45,7 @@ router.post('/api/travels/img',upload.single('img'), postController.createImage)
 
 
 // // 게시물 조회
-router.get('/api/travels', postController.getPost); 
+router.get('/api/travel', postController.getPost); 
 
 
 //=============================================================================================
