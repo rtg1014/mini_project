@@ -9,7 +9,7 @@ exports.createPost = async (req, res) => {
     try {
         const { title, content } = req.body;
 
-        await Board.createPost(title, content);
+        const userCheck = await Board.createPost(title, content);
         if (userCheck) {
             res.status(200).send({
                 userCheck,

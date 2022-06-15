@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     Board.init(
         {
-            boaedId: {
+            boardId: {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
             },
