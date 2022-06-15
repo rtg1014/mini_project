@@ -1,10 +1,11 @@
 const Board = require('../services/boardServices');
 const multer = require('multer');
+const authMiddelware = require('../middlewares/auth-middleware');
 
 // 게시물 작성 controller ----------------------------------------
 
 exports.createPost = async (req, res) => {
-    //next
+
 
     try{
         const {title, content,image } = req.body;
@@ -45,15 +46,18 @@ exports.createPost = async (req, res) => {
 
 // 게시물 조회 controller -----------------------------------------
 
-exports.getPost = async (req, res) => {
+exports.getPost =  async (req, res) => {
     try {
+    
         const postCheck = await Board.getPost();
-
+        const nicknameAdd = res.locals.user.nickname
         if (postCheck) {
             res.status(200).send({
-                postCheck,
+                postCheck,nicknameAdd
+
             });
         }
+    
     } catch (err) {
         console.log(err);
         res.status(400).send({
@@ -62,18 +66,31 @@ exports.getPost = async (req, res) => {
     }
 };
 
-// //-----------------------------------------------------------------
+//-----------------------------------------------------------------
+
+// 닉네임 찾기 --------------------------------------------------
+
+// exports.getNickname = async()
+
+// ============================================================
+
+
+
+
 
 // // 게시물 상세조회 controller ----------------------------------------
 
-exports.getPostId = async (req, res) => {
+exports.getPostId =  async (req, res) => {
     try {
         const { boardId } = req.params;
+        const user = res.locals;
+        const userNick = user.nickname
 
         const postIdCheck = await Board.getPostId(boardId);
         if (postIdCheck) {
             res.status(200).send({
                 postIdCheck,
+                userNick
             });
         }
     } catch (err) {
@@ -88,7 +105,7 @@ exports.getPostId = async (req, res) => {
 
 // 게시물 수정 controller ---------------------------------------------
 
-exports.patchPost = async (req, res) => {
+exports.patchPost =  async (req, res) => {
     try {
         // await upload.single('img')
 
@@ -113,7 +130,7 @@ exports.patchPost = async (req, res) => {
 
 // 게시물 삭제 -----------------------------------------------------------
 
-exports.deletePost = async (req, res) => {
+exports.deletePost =  async (req, res) => {
     try {
         const { boardId } = req.params;
         const deletePostCheck = await Board.deletePost(boardId);

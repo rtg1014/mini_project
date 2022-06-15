@@ -26,6 +26,10 @@ const KakaoStrategy = require('passport-kakao').Strategy;
 // 회원가입
 exports.signUp = async (req, res, next) => {
     // #swagger.tags = ['Users']
+    if (req.headers.authorization) { 
+        return res.status(400).send
+        ({ ereorMessage: '이미 로그인 되어있습니다.', }); 
+    }
     try {
         const { nickname, email, password, confirmPassword } =
             await Joimiddleware.validateAsync(req.body);
@@ -68,6 +72,11 @@ const AuthScheam = Joi.object({
 // 로그인
 exports.login = async (req, res, next) => {
     // #swagger.tags = ['Users']
+    if (req.headers.authorization) { 
+        return res.status(400).send
+        ({ ereorMessage: '이미 로그인 되어있습니다.', }); 
+    }
+    
     try {
         const { email, password } = await AuthScheam.validateAsync(req.body);
 
@@ -87,7 +96,7 @@ exports.login = async (req, res, next) => {
             token,
         });
     } catch (err) {
-        req.status(400).json({
+        res.status(400).json({
             success: false,
             errorMessage: ' 로그인 실패.',
         });
