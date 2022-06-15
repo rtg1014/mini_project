@@ -1,40 +1,41 @@
 {
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "express-async-errors": "^3.1.1",
-    "install": "^0.13.0",
-    "joi": "^17.6.0",
-    "jsonwebtoken": "^8.5.1",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.20.1",
-    "swagger-autogen": "^2.21.3",
-    "swagger-ui-express": "^4.4.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16",
-    "sequelize-cli": "^6.4.1",
-    "passport": "^0.6.0",
-    "passport-kakao": "^1.0.1"
-  },
-  "name": "mini_porject",
-  "version": "1.0.0",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "prestart": "node ./swagger.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rtg1014/mini_project.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rtg1014/mini_project/issues"
-  },
-  "homepage": "https://github.com/rtg1014/mini_project#readme",
-  "description": ""
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "express-async-errors": "^3.1.1",
+        "install": "^0.13.0",
+        "joi": "^17.6.0",
+        "jsonwebtoken": "^8.5.1",
+        "mysql2": "^2.3.3",
+        "sequelize": "^6.20.1",
+        "swagger-autogen": "^2.21.3",
+        "swagger-ui-express": "^4.4.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16",
+        "passport": "^0.6.0",
+        "passport-kakao": "^1.0.1",
+        "sequelize-cli": "^6.4.1"
+    },
+    "name": "mini_porject",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js",
+        "prestart": "node ./swagger.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rtg1014/mini_project.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rtg1014/mini_project/issues"
+    },
+    "homepage": "https://github.com/rtg1014/mini_project#readme",
+    "description": ""
 }

@@ -8,9 +8,9 @@ router.post('/api/signup', userController.signUp);
 // 로그인
 router.post('/api/login', userController.login);
 // 이메일 중복검사
-router.get('/api/duplicates/email', userController.duplicatesEmail);
+router.get('/api/duplicatesemail/:email', userController.duplicatesEmail);
 // 닉네임 중복검사
-router.get('/api/duplicates/nickname', userController.duplicatesNickname);
+router.get('/api/duplicatesnick/:nickname', userController.duplicatesNickname);
 
 // 카카오 로그인
 router.get('/kakao', passport.authenticate('kakao'));

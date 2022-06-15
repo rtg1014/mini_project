@@ -3,6 +3,7 @@ const app = express();
 const db = require('./models');
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger-output.json');
+const Cors = require('cors');
 require('dotenv').config();
 
 db.sequelize
@@ -17,7 +18,7 @@ const userRouter = require('./routes/user');
 app.use(express.urlencoded());
 app.use(express.json());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
-
+app.use(Cors());
 app.use('/', [userRouter]);
 
 app.get('/', (req, res) => {
