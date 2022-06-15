@@ -27,7 +27,7 @@ exports.getPost = async () => {
 // // 게시물 상세조회 controller ----------------------------------------
 
 exports.getPostId = async (boardId) => {
-    return await Board.findOne({ where: { boardId } });
+    return await Board.findOne({ include: { model: User, attributes: ['nickname'] } });
 };
 
 // //--------------------------------------------------------------------
