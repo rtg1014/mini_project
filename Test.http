@@ -1,13 +1,13 @@
 ###
 // 회원가입
-POST http://15.164.50.132/api/signup
+POST http://127.0.0.1:4000/api/signup
 Content-Type: application/json
 
 {
-  "email":"test1234@google.com",
-  "nickname":"테스트12455",
-  "password":"qwer12345",
-  "confirmPassword": "qwer12345"
+  "email":"test1233@google.com",
+  "nickname":"파이리333",
+  "password":"qweq1234",
+  "confirmPassword": "qweq1234"
 }
 
 ###
@@ -16,8 +16,8 @@ POST http://127.0.0.1:4000/api/login
 Content-Type: application/json
 
 {
-    "email":"test12345655@google.com",
-    "password":"qwer12345"
+    "email":"test1233@google.com",
+    "password":"qweq1234"
 }
 
 ###

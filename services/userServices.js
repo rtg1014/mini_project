@@ -4,7 +4,8 @@ const db = require('../models');
 
 // 회원가입
 exports.signUp = async (nickname, email, password, confirmPassword) => {
-    const pwhash = Bcrypt.hashSync(password, 10);
+    const salt = await Bcrypt.genSalt();
+    const pwhash = await Bcrypt.hash(password, salt);
     // 비밀번호 해싱
 
     await db.User.create({
