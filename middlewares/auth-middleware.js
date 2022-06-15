@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Object = require("../models/user");
+const User = require("../models/user");
 
 
 require('dotenv').config
@@ -19,8 +19,8 @@ module.exports =  (req,res,next)=>{              ///미들웨어의 기본 모�
     try {
         const { userId } = jwt.verify( tokenValue, process.env.SECRET_KEY);    /// 복호화 겸, 검증을위한 코드
 
-        Object.findById(userId).exec().then((Object) => {     /// 데이터베이스에서 사용자 정보를 불러와서
-            res.locals.user = Object;     /// 로컬스.user 라는 공간에 담는데
+        User.findById(userId).exec().then((_user) => {     /// 데이터베이스에서 사용자 정보를 불러와서
+            res.locals.user = User;     /// 로컬스.user 라는 공간에 담는데
             next();                      /// {userId} 변수선언 후 userId 찾기
         });                                ///미들웨어는 넥스트가 항상 잇어야      
         
