@@ -5,6 +5,8 @@ const postController = require('../controllers/boardController');
 const db = require('../models');
 const multer = require('multer');
 const fs = require('fs');
+const authMiddelware = require('../middlewares/auth-middleware');
+
 
 // multer 세팅 ==================================================================
 
@@ -36,12 +38,14 @@ router.post('/api/travels', postController.createPost);
 
 // ========================================================================================
 
+
 // 게시물 조회
 router.get('/api/travel', postController.getPost);
 
 //=============================================================================================
 
 //게시물 상세 조회
+
 router.get('/api/travels/:boardId', postController.getPostId);
 
 //--------------------------------------------------------------------------------------------

@@ -1,23 +1,33 @@
-const db = require('../models');
+const {Board, User} = require("../models");
 
 // // 게시물 작성 services ----------------------------
 exports.createPost = async (title, content, image) => {
-    return await db.Board.create({ title, content, image });
+    return await Board.create({ title, content, image });
 };
 // // -------------------------------------------------
 
 // 게시물 조회 services -----------------------------------------
-
 exports.getPost = async () => {
-    return await db.Board.findAll();
+    return await Board.findAll({ include: { model: User, attributes: ['nickname'] } });
 };
 
 //---------------------------------------------------------------
 
+
+// 닉네임 찾기 =========================================
+// exports.login = async (email) =>{ 
+//     return await User.findOne({ attributes: ['nickname'] }, 
+//     { where: { email } }
+//     );
+//  };
+
+//------------------------------------------------------------
+
+
 // // 게시물 상세조회 controller ----------------------------------------
 
 exports.getPostId = async (boardId) => {
-    return await db.Board.findOne({ where: { boardId } });
+    return await Board.findOne({ where: { boardId } });
 };
 
 // //--------------------------------------------------------------------
@@ -25,7 +35,7 @@ exports.getPostId = async (boardId) => {
 // // 게시물 수정 controller ---------------------------------------------
 
 exports.patchPost = async (boardId, title, image, content) => {
-    return await db.Board.update(
+    return await Board.update(
         { title, content, image },
         { where: { boardId: Number(boardId) } }
     );
@@ -36,7 +46,7 @@ exports.patchPost = async (boardId, title, image, content) => {
 // //  게시물 삭제 -----------------------------------------------------------
 
 exports.deletePost = async (boardId) => {
-    return await db.Board.destroy({ where: { boardId } });
+    return await Board.destroy({ where: { boardId } });
 };
 
 // //----------------------------------------------------------------------

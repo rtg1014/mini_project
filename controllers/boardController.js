@@ -1,11 +1,12 @@
 const Board = require('../services/boardServices');
 const multer = require('multer');
+const authMiddelware = require('../middlewares/auth-middleware');
 
 // 게시물 작성 controller ----------------------------------------
 
 exports.createPost = async (req, res) => {
-    // #swagger.tags = ['Board']
 
+    // #swagger.tags = ['Board']
     try{
         const {title, content,image } = req.body;
         const userCheck = await Board.createPost(title, content,image)
@@ -45,16 +46,20 @@ exports.createPost = async (req, res) => {
 
 // 게시물 조회 controller -----------------------------------------
 
+
 exports.getPost = async (req, res) => {
     // #swagger.tags = ['Board']
     try {
+    
         const postCheck = await Board.getPost();
-
+        const nicknameAdd = res.locals.user.nickname
         if (postCheck) {
             res.status(200).send({
-                postCheck,
+                postCheck,nicknameAdd
+
             });
         }
+    
     } catch (err) {
         console.log(err);
         res.status(400).send({
@@ -63,19 +68,30 @@ exports.getPost = async (req, res) => {
     }
 };
 
-// //-----------------------------------------------------------------
+//-----------------------------------------------------------------
+
+// 닉네임 찾기 --------------------------------------------------
+
+// exports.getNickname = async()
+
+// ============================================================
+
 
 // // 게시물 상세조회 controller ----------------------------------------
+
 
 exports.getPostId = async (req, res) => {
     // #swagger.tags = ['Board']
     try {
         const { boardId } = req.params;
+        const user = res.locals;
+        const userNick = user.nickname
 
         const postIdCheck = await Board.getPostId(boardId);
         if (postIdCheck) {
             res.status(200).send({
                 postIdCheck,
+                userNick
             });
         }
     } catch (err) {
