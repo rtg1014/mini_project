@@ -8,7 +8,6 @@ exports.createPost = async (req, res) => {
 
     try {
         const { title, content, image } = req.body;
-
         const userCheck = await Board.createPost(title, content, image);
         if (userCheck) {
             res.status(200).send({
