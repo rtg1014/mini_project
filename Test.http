@@ -4,8 +4,8 @@ POST http://15.164.50.132/api/signup
 Content-Type: application/json
 
 {
-  "email":"test1234@google.com",
-  "nickname":"테스트",
+  "email":"test123456789@google.com",
+  "nickname":"테스트1234",
   "password":"qwer12345",
   "confirmPassword": "qwer12345"
 }
@@ -21,15 +21,30 @@ Content-Type: application/json
 }
 
 ###
-// 중복검사
+// 이메일 중복검사
 GET http://15.164.50.132/api/duplicatesemail/test1234@google.com
 Content-Type: application/json
 
 
 ###
-// 중복검사
+// 닉네임 중복검사
 GET http://15.164.50.132/api/duplicatesnick/테스트
 Content-Type: application/json
 
+###
+// 포스팅
+POST  http://127.0.0.1:4000/api/travels
+Content-Type: application/json
+
+{
+  "image" : "ddd",
+  "title" : "파이리",
+  "content" : "화염 방사"
+}
 
 
+
+###
+// 포스팅
+GET http://15.164.50.132/api/travel
+Content-Type: application/json
