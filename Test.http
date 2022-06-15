@@ -33,12 +33,11 @@ Content-Type: application/json
 
 ###
 // 포스팅
-POST http://127.0.0.1:4000/api/travels
+DELETE  http://15.164.50.132/api/travels/10
 Content-Type: application/json
 
-  { 
-    "title":"제목입니다111", 
-    "content":"내용입니다111" 
-  }
 
-
+###
+// 포스팅
+GET http://15.164.50.132/api/travels/
+Content-Type: application/json

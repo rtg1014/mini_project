@@ -7,9 +7,9 @@ exports.createPost = async (req, res) => {
     //next
 
     try {
-        const { title, content } = req.body;
+        const { title, content, image } = req.body;
 
-        const userCheck = await Board.createPost(title, content);
+        const userCheck = await Board.createPost(title, content, image);
         if (userCheck) {
             res.status(200).send({
                 userCheck,
@@ -26,21 +26,21 @@ exports.createPost = async (req, res) => {
 
 // 이미지 작성 ---------------------------------------------------------------------------
 
-exports.createImage = async (req, res) => {
-    try {
-        const { image } = req.file;
-        const imageCheck = req.file.filename;
-        if (imageCheck) {
-            res.status(200).send({
-                imageCheck,
-            });
-        }
-    } catch {
-        res.status(400).send({
-            errorMessage: '이미지 생성 조건이 올바르지 않습니다.',
-        });
-    }
-};
+// exports.createImage = async (req, res) => {
+//     try {
+//         const { image } = req.file;
+//         const imageCheck = req.file.filename;
+//         if (imageCheck) {
+//             res.status(200).send({
+//                 imageCheck,
+//             });
+//         }
+//     } catch {
+//         res.status(400).send({
+//             errorMessage: '이미지 생성 조건이 올바르지 않습니다.',
+//         });
+//     }
+// };
 
 //-------------------------------------------------------------------------
 
