@@ -31,41 +31,31 @@ const authMiddelware = require('../middlewares/auth-middleware');
 
 //-------------------------------------------------------------------------------
 
-// // 게시물 작성
+// 게시물 작성
 
 router.post('/api/travels', postController.createPost);
 // router.post('/api/travels/img',upload.single('img'), postController.createImage);
 
 // ========================================================================================
 
-// // 게시물 조회
 
-router.get('/api/travel',authMiddelware, postController.getPost); 
-
+// 게시물 조회
+router.get('/api/travel', postController.getPost);
 
 //=============================================================================================
 
+//게시물 상세 조회
 
-// 닉네임 찾기 =====================================================
-
-// router.get('/api/travel', postController.getNickname)
-
-
-
-//==========================================================================
-
-
-// //게시물 상세 조회
 router.get('/api/travels/:boardId', postController.getPostId);
 
 //--------------------------------------------------------------------------------------------
 
-// // 게시물 수정
+// 게시물 수정
 router.patch('/api/travels/:boardId', postController.patchPost);
 
 //---------------------------------------------------------------------------------
 
-// // 게시물 삭제
+// 게시물 삭제
 router.delete('/api/travels/:boardId', postController.deletePost);
 
 module.exports = router;

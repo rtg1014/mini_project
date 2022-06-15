@@ -6,7 +6,7 @@ const authMiddelware = require('../middlewares/auth-middleware');
 
 exports.createPost = async (req, res) => {
 
-
+    // #swagger.tags = ['Board']
     try{
         const {title, content,image } = req.body;
         const userCheck = await Board.createPost(title, content,image)
@@ -46,7 +46,9 @@ exports.createPost = async (req, res) => {
 
 // 게시물 조회 controller -----------------------------------------
 
-exports.getPost =  async (req, res) => {
+
+exports.getPost = async (req, res) => {
+    // #swagger.tags = ['Board']
     try {
     
         const postCheck = await Board.getPost();
@@ -75,12 +77,11 @@ exports.getPost =  async (req, res) => {
 // ============================================================
 
 
-
-
-
 // // 게시물 상세조회 controller ----------------------------------------
 
-exports.getPostId =  async (req, res) => {
+
+exports.getPostId = async (req, res) => {
+    // #swagger.tags = ['Board']
     try {
         const { boardId } = req.params;
         const user = res.locals;
@@ -105,7 +106,8 @@ exports.getPostId =  async (req, res) => {
 
 // 게시물 수정 controller ---------------------------------------------
 
-exports.patchPost =  async (req, res) => {
+exports.patchPost = async (req, res) => {
+    // #swagger.tags = ['Board']
     try {
         // await upload.single('img')
 
@@ -130,7 +132,8 @@ exports.patchPost =  async (req, res) => {
 
 // 게시물 삭제 -----------------------------------------------------------
 
-exports.deletePost =  async (req, res) => {
+exports.deletePost = async (req, res) => {
+    // #swagger.tags = ['Board']
     try {
         const { boardId } = req.params;
         const deletePostCheck = await Board.deletePost(boardId);

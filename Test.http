@@ -1,22 +1,22 @@
 ###
 // 회원가입
-POST http://15.164.50.132/api/signup
+POST http://127.0.0.1:4000/api/signup
 Content-Type: application/json
 
 {
-  "email":"test123456789@google.com",
-  "nickname":"테스트1234",
+  "email":"test1234@google.com",
+  "nickname":"테스트14",
   "password":"qwer12345",
   "confirmPassword": "qwer12345"
 }
 
 ###
 // 로그인
-POST http://15.164.50.132/api/login
+POST http://127.0.0.1:4000/api/login
 Content-Type: application/json
 
 {
-    "email":"test123456@google.com",
+    "email":"test1234@google.com",
     "password":"qwer12345"
 }
 
@@ -33,11 +33,11 @@ Content-Type: application/json
 
 ###
 // 포스팅
-POST  http://127.0.0.1:4000/api/travels
+POST  http://15.164.50.132/api/travels
 Content-Type: application/json
 
 {
-  "image" : "ddd",
+  "image" : "https://images.gameinfo.io/pokemon/256/p4f96.webp",
   "title" : "파이리",
   "content" : "화염 방사"
 }
