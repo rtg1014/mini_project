@@ -33,6 +33,7 @@ Content-Type: application/json
 
 ###
 // 포스팅
+
 POST  http://15.164.50.132/api/travels
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU0LCJpYXQiOjE2NTUzMTA0Nzl9.c48NHpaCXVmsRrcr5tCOpu6Tl1N1cHlkdNCBVB9whao
 Content-Type: application/json
