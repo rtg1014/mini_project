@@ -1,8 +1,8 @@
 const {Board, User} = require("../models");
 
 // // 게시물 작성 services ----------------------------
-exports.createPost = async (title, content, image) => {
-    return await Board.create({ title, content, image });
+exports.createPost = async (title, content, image,userId) => {
+    return await Board.create({ title, content, image,userId });
 };
 // // -------------------------------------------------
 
@@ -27,7 +27,7 @@ exports.getPost = async () => {
 // // 게시물 상세조회 controller ----------------------------------------
 
 exports.getPostId = async (boardId) => {
-    return await Board.findOne({ include: { model: User, attributes: ['nickname'] } });
+    return await Board.findByPk(boardId,{ include: { model: User, attributes: ['nickname'] } });
 };
 
 // //--------------------------------------------------------------------

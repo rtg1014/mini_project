@@ -17,7 +17,7 @@ exports.signUp = async (nickname, email, password, confirmPassword) => {
 // 로그인
 exports.login = async (email) => {
     return await db.User.findOne(
-        { attributes: ['nickname', 'password'] },
+        { attributes: ['nickname', 'password','userId'] },
         { where: { email } }
     );
 };
