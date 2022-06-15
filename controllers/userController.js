@@ -72,15 +72,13 @@ exports.login = async (req, res, next) => {
         const { email, password } = await AuthScheam.validateAsync(req.body);
 
         const user = await Services.login(email);
-        console.log(user);
-        console.log(email);
         const passwordcheck = Bcrypt.compare(password, user.password);
         if (!user || !passwordcheck) {
             return res.status(400).json({ Message: '이메일또는 패스워드가 잘못됨' });
         }
 
         const token = jwt.sign({ userId: user.userId }, process.env.SECRET_KEY);
-        // console.log(user);
+
         const nickname = user.nickname;
         res.status(200).send({
             token,

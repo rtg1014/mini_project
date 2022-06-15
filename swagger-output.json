@@ -77,7 +77,7 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "userId": {
+                                "email": {
                                     "example": "any"
                                 },
                                 "password": {
