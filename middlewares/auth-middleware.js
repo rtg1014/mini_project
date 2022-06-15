@@ -4,7 +4,7 @@ require('dotenv').config;
 
 module.exports = (req, res, next) => {
     const { authorization } = req.headers;
-    const [tokenType, tokenValue] = authorization.split(' ');
+    // const [tokenType, tokenValue] = authorization.split(' ');
 
     // if (tokenType !== 'Bearer') {
     //     res.status(401).send({
@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
     //     return; ///오류가 났으니 더이상 진행시키면 안되서 return
     // }
     try {
-        const { userId } = jwt.verify(tokenValue, process.env.SECRET_KEY);
+        const { userId } = jwt.verify(authorization, process.env.SECRET_KEY);
         console.log(userId);
         console.log(process.env.SECRET_KEY);
         User.findByPk(userId).then((user) => {

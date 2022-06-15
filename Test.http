@@ -1,18 +1,18 @@
 ###
 // 회원가입
-POST http://15.164.50.132/api/signup
+POST http://127.0.0.1:4000/api/signup
 Content-Type: application/json
 
 {
-  "email":"test12.1@google.com",
-  "nickname":"파이리1",
+  "email":"test123334@google.com",
+  "nickname":"파이리13",
   "password":"qweq1234",
   "confirmPassword": "qweq1234"
 }
 
 ###
 // 로그인
-POST http://15.164.50.132/api/login
+POST http://127.0.0.1:4000/api/login
 Content-Type: application/json
 
 {
@@ -33,7 +33,8 @@ Content-Type: application/json
 
 ###
 // 포스팅
-POST  http://15.164.50.132/api/travels
+POST  http://127.0.0.1:4000/api/travels
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjU0LCJpYXQiOjE2NTUzMDc4NjB9.IJ6ZiZyyAFyDEh_rPzSsIKS8iddguHNqjG_xACn2A24
 Content-Type: application/json
 
 {
