@@ -1,0 +1,35 @@
+###
+// 회원가입
+POST http://15.164.50.132/api/signup
+Content-Type: application/json
+
+{
+  "email":"test1234@google.com",
+  "nickname":"테스트",
+  "password":"qwer12345",
+  "confirmPassword": "qwer12345"
+}
+
+###
+// 로그인
+POST http://15.164.50.132/api/login
+Content-Type: application/json
+
+{
+    "email":"test123456@google.com",
+    "password":"qwer12345"
+}
+
+###
+// 중복검사
+GET http://15.164.50.132/api/duplicatesemail/test1234@google.com
+Content-Type: application/json
+
+
+###
+// 중복검사
+GET http://15.164.50.132/api/duplicatesnick/테스트
+Content-Type: application/json
+
+
+
