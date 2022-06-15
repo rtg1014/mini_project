@@ -4,19 +4,19 @@ POST http://15.164.50.132/api/signup
 Content-Type: application/json
 
 {
-  "email":"test123456@google.com",
-  "nickname":"테스트124",
+  "email":"test1234@google.com",
+  "nickname":"테스트12455",
   "password":"qwer12345",
   "confirmPassword": "qwer12345"
 }
 
 ###
 // 로그인
-POST http://15.164.50.132/api/login
+POST http://127.0.0.1:4000/api/login
 Content-Type: application/json
 
 {
-    "email":"test123456@google.com",
+    "email":"test12345655@google.com",
     "password":"qwer12345"
 }
 
