@@ -7,7 +7,6 @@ const multer = require('multer');
 const fs = require('fs');
 const authMiddelware = require('../middlewares/auth-middleware');
 
-
 // multer 세팅 ==================================================================
 
 // try {
@@ -38,24 +37,23 @@ router.post('/api/travels', authMiddelware, postController.createPost);
 
 // ========================================================================================
 
-
 // 게시물 조회
-router.get('/api/travel', postController.getPost);
+router.get('/api/travel', authMiddelware, postController.getPost);
 
 //=============================================================================================
 
 //게시물 상세 조회
 
-router.get('/api/travels/:boardId', postController.getPostId);
+router.get('/api/travels/:boardId', authMiddelware, postController.getPostId);
 
 //--------------------------------------------------------------------------------------------
 
 // 게시물 수정
-router.patch('/api/travels/:boardId', postController.patchPost);
+router.patch('/api/travels/:boardId', authMiddelware, postController.patchPost);
 
 //---------------------------------------------------------------------------------
 
 // 게시물 삭제
-router.delete('/api/travels/:boardId', postController.deletePost);
+router.delete('/api/travels/:boardId', authMiddelware, postController.deletePost);
 
 module.exports = router;
