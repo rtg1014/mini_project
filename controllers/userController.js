@@ -78,6 +78,7 @@ exports.login = async (req, res, next) => {
         }
 
         const token = jwt.sign({ userId: user.userId }, process.env.SECRET_KEY);
+        console.log(user)
         const nickname = user.nickname;
         res.status(200).send({
             token,

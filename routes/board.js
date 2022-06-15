@@ -33,7 +33,7 @@ const authMiddelware = require('../middlewares/auth-middleware');
 
 // 게시물 작성
 
-router.post('/api/travels', postController.createPost);
+router.post('/api/travels', authMiddelware, postController.createPost);
 // router.post('/api/travels/img',upload.single('img'), postController.createImage);
 
 // ========================================================================================

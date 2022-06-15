@@ -9,10 +9,14 @@ exports.createPost = async (req, res) => {
     // #swagger.tags = ['Board']
     try{
         const {title, content,image } = req.body;
-        const userCheck = await Board.createPost(title, content,image)
+        const { userId } = res.locals.user;
+        const userCheck = await Board.createPost(title, content,image,userId)
+        const currentId = userCheck.null;
+        userCheck.boardId = currentId
+        console.log(userCheck.title)
         if(userCheck){
             res.status(200).send({
-                userCheck,
+                userCheck
             });
         }
     } catch (err) {
@@ -52,10 +56,9 @@ exports.getPost = async (req, res) => {
     try {
     
         const postCheck = await Board.getPost();
-        const nicknameAdd = res.locals.user.nickname
         if (postCheck) {
             res.status(200).send({
-                postCheck,nicknameAdd
+                postCheck
 
             });
         }
@@ -83,15 +86,11 @@ exports.getPost = async (req, res) => {
 exports.getPostId = async (req, res) => {
     // #swagger.tags = ['Board']
     try {
-        const { boardId } = req.params;
-        const user = res.locals;
-        const userNick = user.nickname
-
+        const {boardId}  = req.params;
         const postIdCheck = await Board.getPostId(boardId);
         if (postIdCheck) {
             res.status(200).send({
                 postIdCheck,
-                userNick
             });
         }
     } catch (err) {
