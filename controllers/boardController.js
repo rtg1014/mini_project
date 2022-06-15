@@ -6,10 +6,10 @@ const multer = require('multer');
 exports.createPost = async (req, res) => {
     // #swagger.tags = ['Board']
 
-    try {
-        const { title, content, image } = req.body;
-        const userCheck = await Board.createPost(title, content, image);
-        if (userCheck) {
+    try{
+        const {title, content,image } = req.body;
+        const userCheck = await Board.createPost(title, content,image)
+        if(userCheck){
             res.status(200).send({
                 userCheck,
             });
