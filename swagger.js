@@ -6,7 +6,7 @@ const doc = {
         description: '항해99 1조 Miniproject',
     },
     host: 'localhost:4000',
-    basePath: '',
+    basePath: '/',
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],
@@ -16,7 +16,7 @@ const doc = {
             description: '로그인, 회원가입, 중복 검사',
         },
         {
-            name: 'board',
+            name: 'Board',
             description:
                 '게시물 작성, 게시물 조회, 게시물 삭제, 게시물 수정, 게시물 상세조회',
         },
@@ -31,6 +31,6 @@ const doc = {
     },
 };
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/user.js'];
+const endpointsFiles = ['./routes/user.js', './routes/board.js'];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);

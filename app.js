@@ -1,29 +1,28 @@
-const express = require("express");
-const app = express(); 
+const express = require('express');
+const app = express();
 const db = require('./models');
 const swaggerUi = require('swagger-ui-express');
 const swaggerFile = require('./swagger-output.json');
 const Cors = require('cors');
 require('dotenv').config();
 
-
 db.sequelize
     .sync()
     .then(() => {
-        console.log('db 연결 성공');
+        console.log('🟢db 연결 성공');
     })
     .catch(console.error);
 
-const boardRouter = require('./routes/board'); 
+const boardRouter = require('./routes/board');
 const userRouter = require('./routes/user');
 
 app.use(express.urlencoded());
 app.use(express.json());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(Cors());
-app.use('/', [userRouter,boardRouter]);
+app.use('/', [userRouter, boardRouter]);
 
-app.post('/')
+app.post('/');
 app.get('/', (req, res) => {
     res.send('1조 미니 프로젝트 BE');
 });
@@ -34,6 +33,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(process.env.PORT, () => {
-    console.log(process.env.PORT, '포트로 서버가 켜졌어요!');
+    console.log('🟢', process.env.PORT, '포트로 서버가 켜졌어요!');
 });
-
