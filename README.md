@@ -27,17 +27,17 @@ FE : 정대규, 장세화, 임운철
 API 명세서
 
 |페이지|기능|API URL|Method|request(가져갈 데이터)|response(서버로부터 받아올 데이터)|     
-|------|---|---|------|---|---|
+|:------:|:---:|:---:|:------:|:---:|:---:|
 |홈|회원정보로 이동| x | x | x |x |
-|회원정보|회원가입|테스트3|테스트1|테스트2|테스트3|
-|회원정보|로그인|테스트3|테스트1|테스트2|테스트3|
-|회원정보|중복검사 email|테스트3|테스트1|테스트2|테스트3|
-|회원정보|중복검사 닉네임|테스트3|테스트1|테스트2|테스트3|
-|메인|여행 게시물 조회|테스트3|테스트1|테스트2|테스트3|
-|메인|게시물 작성|테스트3|테스트1|테스트2|테스트3|
-|메인|게시물 상세 조회|테스트3|테스트1|테스트2|테스트3|
-|Detail|게시물 수정|테스트3|테스트1|테스트2|테스트3|
-|Detail|게시물 삭제|테스트3|테스트1|테스트2|테스트3|
+|회원정보|회원가입|/api/signup|/api/signup|email,password|token; result : [{""success"",nickname}] OR message: '이메일 또는 패스워드 확인해주세요'}"|
+|회원정보|로그인|/api/login|POST|email,password|token; result : [{""success"",nickname}] OR message: '이메일 또는 패스워드 확인해주세요'|
+|회원정보|중복검사 이메일|/api/duplicatesemail/:email|GET|email|Message: '사용 가능한 이메일 입니다' OR Message: '중복된 이메일 입니다' |
+|회원정보|중복검사 닉네임|/api/duplicatesnick/:nickname|GET|nickname|Message: '사용 가능한 닉네임 입니다' OR Message: '중복된 닉네임 입니다' |
+|메인|여행 게시물 조회|/api/travel|GET|x|boardId,title,image,nickname|
+|메인|게시물 작성|/api/travels|x|title,image,content|boardId,title,image,content|
+|메인|게시물 상세 조회|/api/travels/:boardId|GET|x|boardId,title,image,content,nickname|
+|Detail|게시물 수정|/api/travels/:boardId|PATCH|"title,image,content|boardId,title,image,content|
+|Detail|게시물 삭제|/api/travels/:boardId|DELETE|x|boardId|
 
 
 
