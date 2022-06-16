@@ -123,7 +123,9 @@ API 명세서
 
 3. 로그인
 
+
 3-1. passport를 이용하여 SNS(카카오톡)로그인 기능 구현을 했으나 FE와 상의 후 사용하지 않음.
+
 3-2 , FE 토큰 헤더가 Bearer로 서버로 전달하지 않음 => Bearer, token 을 split(''),으로 받지 않고 const { authorization } = req.headers; 받어서 FE로 response
 
 3-3 . FE 요청으로 로그인시 닉네임 넘겨달라는 부분 =>
