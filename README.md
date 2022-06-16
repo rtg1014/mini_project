@@ -112,7 +112,8 @@ API 명세서
 
 ---
 
- Trouble Shooting
+
+🤟 Trouble Shooting
 (우리 팀이 해결한 문제 정리)
 
 
@@ -129,9 +130,14 @@ API 명세서
         user (email.passwoerd)확인 완료시 token만발행 => Board, User 외래키를 잡아(1:n), attributes: ['nickname', 'password', 'userId', 'email'], where: { email } =>
         사용하여 유저 정보 넘겨 받은뒤에 user.nickname을 token과 같이 response
 
-3-4 . 암호화 : Bcrypt.hashSync(password, 10)                                             복호화 : Bcrypt.compareSync(password, user.password) => 비밀번호 암호화한 값과 복호화한 값이 일치하지 않는 오류 발생
-        암호화 : const salt = await Bcrypt.genSalt();                                         복호화 : Bcrypt.compareSync(password, user.password) => 오류 해결
+3-4 . 암호화 : Bcrypt.hashSync(password, 10)                                             
+복호화 : Bcrypt.compareSync(password, user.password) => 비밀번호 암호화한 값과 복호화한 값이 일치하지 않는 오류 발생
+
+
+암호화 : const salt = await Bcrypt.genSalt();                                       
                       const pwhash = await Bcrypt.hash(password, salt);
+
+복호화 : Bcrypt.compareSync(password, user.password) => 오류 해결       
  
 
 
