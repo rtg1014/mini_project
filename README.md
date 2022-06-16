@@ -37,7 +37,7 @@
 <!-- <img src="https://img.shields.io/badge/이름-색상코드?style=flat-square&logo=로고명&logoColor=로고색"/>
  -->
 
-BackEnd
+📌 BackEnd
 
 <img src="https://img.shields.io/badge/javascript-333333?style=flat-square&logo=javascript&logoColor=yellow"/> <img src="https://img.shields.io/badge/mysql-3333ff?style=flat-square&logo=firebase&logoColor=white"/> 
 <img src="https://img.shields.io/badge/express-666666?style=flat-square&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-33cc00?style=flat-square&logo=Node.js&logoColor=white"/>
@@ -46,7 +46,8 @@ BackEnd
 <img src="https://img.shields.io/badge/NPM-33cc00?style=flat-square&logo=NPM.js&logoColor=red"/> <img src="https://img.shields.io/badge/JSON WEB TOKEN-333333?style=flat-square&logo=json web token&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-ffcc33?style=flat-square&logo=AWS&logoColor=white"/> <img src="https://img.shields.io/badge/passport-00cc66?style=flat-square&logo=passport&logoColor=white"/>
 
 
-Front-end
+
+📌 Front-end
 
 <img src="https://img.shields.io/badge/javascript-333333?style=flat-square&logo=javascript&logoColor=yellow"/> <img src="https://img.shields.io/badge/HTML-ff3300?style=flat-square&logo=HTML&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-3366ff?style=flat-square&logo=CSS&logoColor=white"/>
 
@@ -60,6 +61,12 @@ Front-end
 
 API 명세서
 
+![uml 재료 1](https://user-images.githubusercontent.com/105336416/173999191-a791ed0b-65a4-4967-b91d-56c4af81c0a4.PNG)
+
+![uml 재료 2](https://user-images.githubusercontent.com/105336416/173999295-489c46a7-1a57-4ab5-922a-a9c8af0dced0.PNG)
+
+
+<!-- 
 | 페이지 | 기능 | API URL | Method | request(가져갈 데이터)|response(서버로부터 받아올 데이터)|     
 |:------:|:------:|:---:|:------:|:---:|:---:|
 |홈|회원정보로 이동| x | x | x |x |
@@ -71,7 +78,7 @@ API 명세서
 |메인|게시물 작성|/api/travels|x|title,image,content|boardId,title,image,content|
 |메인|게시물 상세 조회|/api/travels/:boardId|GET|x|boardId,title,image,content,nickname|
 |Detail|게시물 수정|/api/travels/:boardId|PATCH|"title,image,content|boardId,title,image,content|
-|Detail|게시물 삭제|/api/travels/:boardId|DELETE|x|boardId|
+|Detail|게시물 삭제|/api/travels/:boardId|DELETE|x|boardId| -->
 
 
 
